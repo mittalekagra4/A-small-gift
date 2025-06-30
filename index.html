@@ -93,8 +93,9 @@
   </style>
 </head>
 <body>
-  <!-- ✅ FIXED MUSIC LINK -->
-  <audio autoplay loop>
+
+  <!-- 🎵 Audio tag without autoplay -->
+  <audio id="bgMusic" loop>
     <source src="https://raw.githubusercontent.com/mittalekagra4/A-small-gift/main/soft-bg-music.mp3" type="audio/mp3">
   </audio>
 
@@ -120,12 +121,16 @@
       const message = document.getElementById('message');
       const button = document.getElementById('revealBtn');
       const sparkles = document.getElementById('sparkles');
+      const music = document.getElementById('bgMusic');
 
       flower.classList.add('show');
       message.style.display = 'block';
       button.style.display = 'none';
 
-      // Generate floating hearts
+      // Play music on user interaction
+      music.play();
+
+      // Floating hearts
       for (let i = 0; i < 15; i++) {
         let heart = document.createElement("div");
         heart.className = "heart";
